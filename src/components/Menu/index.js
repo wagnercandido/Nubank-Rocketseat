@@ -33,11 +33,15 @@ export default function Menu({ translateY }) {
             <Nav>
                 <NavItem>
                     <Icon name="help-outline" size={20} color="#FFF" />
-                    <NavText>Ajuda</NavText>
+                    <NavText>Me ajuda</NavText>
                 </NavItem>
                 <NavItem>
                     <Icon name="person-outline" size={20} color="#FFF" />
                     <NavText>Perfil</NavText>
+                </NavItem>
+                <NavItem>
+                    <Icon name="style" size={20} color="#FFF" />
+                    <NavText>Configurar NuConta</NavText>
                 </NavItem>
                 <NavItem>
                     <Icon name="credit-card" size={20} color="#FFF" />

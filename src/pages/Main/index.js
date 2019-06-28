@@ -43,11 +43,11 @@ export default function Main() {
       }
 
       Animated.timing(translateY, {
-        toValue: opened ? 380 : 0,
+        toValue: opened ? 405 : 0,
         duration: 200,
         useNativeDriver: true,
       }).start(() => {
-        offset = opened ? 380 : 0;
+        offset = opened ? 405 : 0;
         translateY.setOffset(offset);
         translateY.setValue(0);
       });
@@ -69,8 +69,8 @@ export default function Main() {
           <Card style={{
             transform: [{
               translateY: translateY.interpolate({
-                inputRange: [0, 370],
-                outputRange: [0, 370],
+                inputRange: [0, 405],
+                outputRange: [0, 405],
                 extrapolate: 'clamp',
               }),
             }]
