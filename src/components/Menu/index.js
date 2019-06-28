@@ -1,18 +1,31 @@
 import React from 'react';
 
+import { BackAndroid, BackHandler } from 'react-native';
+
 import QRCode from 'react-native-qrcode';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Container, Code, Nav, NavItem, NavText, SignOutButton, SignOutButtonText } from './styles';
 
-export default function Menu() {
+export default function Menu({ translateY }) {
+
+    exitFuction = () => {
+        BackHandler.exitApp();
+    };
+
     return (
-        <Container>
+        <Container style={{
+            opacity: translateY.interpolate({
+                inputRange: [0, 150],
+                outputRange: [0, 1],
+            }),
+        }}
+        >
             <Code>
                 <QRCode
                     value="https://rocketseat.com.br"
                     size={80}
-                    bgColor="#fff"
+                    bgColor="#FFF"
                     fgColor="#8B10AE"
                 />
             </Code>
@@ -36,7 +49,7 @@ export default function Menu() {
                 </NavItem>
             </Nav>
 
-            <SignOutButton onPress={() => {}} >
+            <SignOutButton onPress={this.exitFuction} >
                 <SignOutButtonText>SAIR DO APP</SignOutButtonText>
             </SignOutButton>
 
